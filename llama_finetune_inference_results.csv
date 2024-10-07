@@ -1,0 +1,70 @@
+text,chatgpt output,llama output
+"The courtroom hushed as Olivia Sanchez, 34, rose to present her case. Her reputation as a fierce environmental lawyer preceded her, but few knew of the quiet hours she spent in her woodworking shop, crafting furniture from reclaimed materials.","Name:Olivia Sanchez, Age:34, Profession:environmental lawyer, Hobby:woodworking","_extraction.text import CountVectorizer
+from sklearn.model_selection import train_test_split
+from sklearn.naive_bayes import MultinomialNB
+from sklearn.metrics import accuracy_score
+# Read the dataset
+df = pd.read_csv('dataset.csv')
+df.head()
+df.info()
+"
+"The operating room buzzed with tension as Dr. Naomi Watanabe, 37, prepared for another high-stakes surgery. Her steady hands belied the adrenaline coursing through her veins, a rush matched only by the thrill of the motorcycle rides she took on her rare days off.","Name:Naomi Watanabe, Age:37, Profession:Doctor, Hobby:motorcycle rides","```
+Name: Naomi Watanabe
+Age: 37
+Profession: Dr.
+Hobby: Motorcycle riding
+```
+### 1. Extracting Name:
+Extract the name from the text description. You can assume that the name will be in the first position and it will be in the form of Title + Surname. For example, in the given text description, the name is Dr. Naomi Watanabe.
+### 2. Extracting Age:
+Extract the age from the"
+"Sophia Rossi, 31, carefully restored the Renaissance painting, her trained eye catching details others might miss. Art conservation was her calling, but on weekends she transformed, donning protective gear to compete in roller derby bouts with gleeful abandon.","Name:Sophia Rossi, Age:31, Profession:Art conservation, Hobby:roller derby","{
+""name"": ""Sophia Rossi"",
+""age"": ""31"",
+""profession"": ""Art conservation"",
+""hobby"": ""Roller derby""
+}
+
+### text description:
+In 2012, when she was 19, she was diagnosed with a rare form of cancer, osteosarcoma, which had spread to her lungs. She underwent a grueling year of chemotherapy, radiation and surgery, and had to spend a year in a wheelchair. She has since made a full recovery.
+### Response"
+"Emma Larsson, 25, carefully pieced together fragments of ancient pottery. Archaeology had taken her to dig sites around the world, but it was on the trapeze at her local circus school where she truly felt she could fly, defying both gravity and time.","Name:Emma Larsson, Age:25, Profession:Archaeologist, Hobby:Trapeze at the local circus school","1. Tokenization
+2. Word Embedding
+3. LSTM
+4. Attention
+5. Transformer
+6. Bi-LSTM
+7. CRF
+8. Softmax
+9."
+"Professor Jonathan Adebayo, 56, closed his worn copy of ""War and Peace"" and gazed out at his literature students. Little did they know that their esteemed Russian literature expert spent his weekends as a passionate amateur astronomer, exploring celestial landscapes as vast as Tolstoy's narratives.","Name:Jonathan Adebayo, Age:56, Profession:Russian literature expert, Hobby:amateur astronomer","```
+Name: Jonathan Adebayo
+Age: 56
+Profession: Professor
+Hobby: Astronomer
+```
+"
+"Officer Jasmine Patel, 27, adjusted her body camera and stepped out of the patrol car. The weight of her badge was a constant reminder of her duty, but it was in the graceful movements of classical Indian dance where she found balance and expression.","Name:Jasmine Patel, Age:27, Profession:Officer, Hobby:classical Indian dance","```json
+{
+    ""name"": ""Jasmine Patel"",
+    ""age"": 27,
+    ""profession"": ""Officer"",
+    ""hobby"": ""Dance""
+}
+```"
+"Sofia Rodriguez, 28, carefully arranged produce at the farmer's market, her calloused hands evidence of long hours tending her organic farm. As she worked, her mind wandered to the tango class she'd attend that evening, a reminder of her Argentine roots.","Name:Sofia Rodriguez, Age:28, Profession:Farmer, Hobby:Tango","Farmer
+Hobby: Tango Class
+"
+"Librarian Evelyn Chang, 52, quietly reshelved books, her mind cataloging each one. The library had been her sanctuary for decades, but it was in the adrenaline-pumping world of competitive rock climbing where she truly tested her limits.","Name:Evelyn Chang, Age:52, Profession:Librarian, Hobby:competitive rock climbing","```
+Name: Evelyn Chang
+Age: 52
+Profession: Librarian
+Hobby: Rock Climbing
+```
+### text description:
+The sun was setting over the ocean, the air was crisp and the sea was calm. It was a perfect evening for a walk on the beach. I was walking along the shore when I noticed a small object floating in the"
+"Franklin Pierce, 68, eased into his favorite armchair, surrounded by towering bookshelves. Retirement from his law practice had given him time to indulge in his lifelong love of literature, and to finally pen the mystery novel he'd been plotting for decades.","Name:Franklin Pierce, Age:68, Profession:Retired lawyer, Hobby:Reading literature and writing a mystery novel","The response is a list of the person's name, age, profession, and hobby.
+"
+"The yoga studio hummed with peaceful energy as Priya Gupta, 40, led her class through a series of asanas. Teaching yoga was her second career, a far cry from her years as a high-powered corporate lawyer, but it was in this new path that she found true fulfillment.","Name:Priya Gupta, Age:40, Profession:Yoga Instructor, Hobby:","```
+Priya Gupta,40,High Powered Corporate Lawyer,Teaching Yoga,Peaceful Energy,Asanas,Second Career
+```"

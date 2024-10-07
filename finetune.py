@@ -9,6 +9,8 @@ from datasets import load_dataset
 import torch
 from transformers import AutoModelForCausalLM, BitsAndBytesConfig, AutoTokenizer
 from peft import PeftModel
+from transformers import TextDataset
+import pandas as pd
 
 #test model
 
@@ -28,7 +30,7 @@ model_input = tokenizer(eval_prompt, return_tensors="pt").to("cuda")
 
 model.eval()
 with torch.no_grad():
-    print(tokenizer.decode(model.generate(**model_input, max_new_tokens=100)[0], skip_special_tokens=True))
+    print("The output before finetune: ", tokenizer.decode(model.generate(**model_input, max_new_tokens=100)[0], skip_special_tokens=True))
 
 
 tokenizer.add_eos_token = True
@@ -50,7 +52,7 @@ def tokenize(prompt):
 
 # dataset
 
-with open('CustomeData.json', 'r') as f:
+with open('/home/lina/finetuneLLama/Llama3finetune/dataProcess/CustomeData.json', 'r') as f:
     data = json.load(f)
 dataset = Dataset.from_list(data)
 first_datapoint = dataset[0]
@@ -167,4 +169,42 @@ model_input = tokenizer(eval_prompt, return_tensors="pt").to("cuda")
 
 model.eval()
 with torch.no_grad():
-    print(tokenizer.decode(model.generate(**model_input, max_new_tokens=100)[0], skip_special_tokens=True))
+    print("The output after finetune: ",tokenizer.decode(model.generate(**model_input, max_new_tokens=100)[0], skip_special_tokens=True))
+
+
+def generate_inference_prompt(data_point):
+    full_prompt =f"""You are a AI Assistant. You will extract Name,Age,Profession,and Hobby information from the given text description.
+### text description:
+{data_point["input"]}
+### Response:
+"""
+    return full_prompt
+
+# Inference on the validation set
+results = []
+for data_point in eval_dataset:
+    text_input = data_point["input"]
+    origin_output = data_point["output"]
+    inference_input = generate_inference_prompt(data_point)
+    
+    # Prepare input for the model
+    model_input = tokenizer(inference_input, return_tensors="pt").to("cuda")
+    
+    # Perform inference with the fine-tuned model
+    model.eval()
+    with torch.no_grad():
+        generated_output = tokenizer.decode(
+            model.generate(**model_input, max_new_tokens=100)[0],
+            skip_special_tokens=True
+        )
+    
+    # Append the result to the list
+    results.append({
+        "text": text_input,
+        "chatgpt output": origin_output,
+        "llama output": generated_output.lstrip(inference_input)
+    })
+
+# Convert results to DataFrame and save to CSV
+results_df = pd.DataFrame(results)
+results_df.to_csv("llama_finetune_inference_results.csv", index=False)
