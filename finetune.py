@@ -22,17 +22,9 @@ model = AutoModelForCausalLM.from_pretrained(
     device_map="auto",
 )
 tokenizer = AutoTokenizer.from_pretrained("meta-llama/Llama-3.2-3B")
-eval_prompt = """Extract Name,Age,Profession,and Hobby information from the following text description: As the sun dipped below the horizon,
- Eliza Matthews, 32, closed her laptop with a sigh. Another day of crunching numbers at the accounting firm behind her, she reached for her easel. 
- Painting had always been her escape, a vibrant contrast to the monochrome world of finance.
-"""
-model_input = tokenizer(eval_prompt, return_tensors="pt").to("cuda")
-
-model.eval()
-with torch.no_grad():
-    print("The output before finetune: ", tokenizer.decode(model.generate(**model_input, max_new_tokens=100)[0], skip_special_tokens=True))
 
 
+#finetune
 tokenizer.add_eos_token = True
 tokenizer.pad_token_id = 0
 tokenizer.padding_side = "left"
@@ -60,8 +52,36 @@ print(first_datapoint)
 print(type(first_datapoint))
 train_dataset = dataset.train_test_split(test_size=0.1)["train"] 
 eval_dataset = dataset.train_test_split(test_size=0.1)["test"]
+
+
+
+model.eval()
+def generate_inference_prompt(data_point):
+    full_prompt =f"""You are an AI Assistant. You will extract Name, Age, Profession, and Hobby information from the given text description.
+### text description:
+{data_point["input"]}
+### Response:
+"""
+    return full_prompt
+
+results_before_finetune = []
+for data_point in eval_dataset:
+    text_input = data_point["input"]
+    origin_output = data_point["output"]
+    inference_input = generate_inference_prompt(data_point)
+    model_input = tokenizer(inference_input, return_tensors="pt").to("cuda")
+    with torch.no_grad():
+        generated_output_before_finetune = tokenizer.decode(
+            model.generate(**model_input, max_new_tokens=100)[0],
+            skip_special_tokens=True
+        ) 
+    print(generated_output_before_finetune)       
+    results_before_finetune.append(
+        generated_output_before_finetune.lstrip(inference_input),
+    )
+    
   
-def generate_and_tokenize_prompt(data_point):
+def generate_trainning_prompt(data_point):
     full_prompt =f"""You are a AI Assistant. You will extract Name,Age,Profession,and Hobby information from the given text description.
 ### text description:
 {data_point["input"]}
@@ -70,8 +90,8 @@ def generate_and_tokenize_prompt(data_point):
 """
     return tokenize(full_prompt)
 
-tokenized_train_dataset = train_dataset.map(generate_and_tokenize_prompt)
-tokenized_val_dataset = eval_dataset.map(generate_and_tokenize_prompt)
+tokenized_train_dataset = train_dataset.map(generate_trainning_prompt)
+tokenized_val_dataset = eval_dataset.map(generate_trainning_prompt)
 
 
 
@@ -154,8 +174,6 @@ model = torch.compile(model)
 
 # trainer.train()
 
-##inference after finetuning
-
 base_model = "meta-llama/Llama-3.2-3B"
 model = AutoModelForCausalLM.from_pretrained(
     base_model,
@@ -163,48 +181,29 @@ model = AutoModelForCausalLM.from_pretrained(
     torch_dtype=torch.float16,
     device_map="auto",
 )
-tokenizer = AutoTokenizer.from_pretrained("meta-llama/Llama-3.2-3B")
 model = PeftModel.from_pretrained(model, output_dir+"/checkpoint-400")
-model_input = tokenizer(eval_prompt, return_tensors="pt").to("cuda")
 
 model.eval()
-with torch.no_grad():
-    print("The output after finetune: ",tokenizer.decode(model.generate(**model_input, max_new_tokens=100)[0], skip_special_tokens=True))
-
-
-def generate_inference_prompt(data_point):
-    full_prompt =f"""You are a AI Assistant. You will extract Name,Age,Profession,and Hobby information from the given text description.
-### text description:
-{data_point["input"]}
-### Response:
-"""
-    return full_prompt
-
-# Inference on the validation set
 results = []
 for data_point in eval_dataset:
     text_input = data_point["input"]
     origin_output = data_point["output"]
     inference_input = generate_inference_prompt(data_point)
-    
-    # Prepare input for the model
     model_input = tokenizer(inference_input, return_tensors="pt").to("cuda")
-    
-    # Perform inference with the fine-tuned model
-    model.eval()
     with torch.no_grad():
-        generated_output = tokenizer.decode(
+        generated_output_after_finetune = tokenizer.decode(
             model.generate(**model_input, max_new_tokens=100)[0],
             skip_special_tokens=True
-        )
+        )    
     
     # Append the result to the list
     results.append({
         "text": text_input,
         "chatgpt output": origin_output,
-        "llama output": generated_output.lstrip(inference_input)
+        "output after finetune": generated_output_after_finetune.lstrip(inference_input),
     })
 
 # Convert results to DataFrame and save to CSV
 results_df = pd.DataFrame(results)
-results_df.to_csv("llama_finetune_inference_results.csv", index=False)
+results_df['output before finetune'] = results_before_finetune
+results_df.to_csv("llama_finetune_inference_results4.csv", index=False)
