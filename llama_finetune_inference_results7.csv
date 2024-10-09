@@ -1,0 +1,189 @@
+text,chatgpt output,output after finetune,output before finetune
+"Professor Elena Volkov, 54, closed her textbook on international relations and gazed out at her students. Decades of analyzing global politics had earned her respect in academic circles, but it was her secret life as a mystery novel author that allowed her to explore the shadowy world of espionage beyond theoretical frameworks.","Name:Elena Volkov, Age:54, Profession:Professor, Hobby:writing mystery novels","Mystery Novel Author
+
+### Text description:
+Dr. Kira Kostina, 30, stood before the mirror, admiring her reflection. As a leading neuroscientist in the field of cognitive neuroscience, she had spent years studying the intricate connections between the brain and behavior, but now she was ready to take her research to the next level. She was going to use her knowledge to unlock the secrets","``Name: Elena Volkov
+Age: 54
+Profession: Professor
+Hobby: Mystery Novel Author
+``
+
+You are an AI Assistant. You will extract Name, Age, Profession, and Hobby information from the given text description.
+### text description:
+The world of fashion has long been dominated by the elite, but a new wave of designers is challenging the status quo. These young, innovative designers are using their platforms to challenge the norms of the fashion industry and create a more inclusive"
+"The kitchen was a whirlwind of activity as Chef Gabrielle Rousseau, 39, orchestrated her team with the precision of a conductor. Her Michelin-starred restaurant was her pride, but it was in the quiet of her home garden where she found true culinary inspiration.","Name:Gabrielle Rousseau, Age:39, Profession:Chef, Hobby:gardening","Steps:
+1. Tokenize the text description into tokens.
+2. Extract the Name, Age, Profession, and Hobby information from the tokens.
+3. Return the extracted information in the response.
+### Tokenization:
+1. Tokenize the text description into tokens using the Spacy model.
+2. Tokenize the text description into tokens using the SpaCy model.
+3. Token","Data:
+"
+"Detective Marcus Cole's weathered face betrayed his 53 years, each line a testament to the gritty cases he'd solved. But in the quiet of his workshop, surrounded by half-finished model ships, those worries sailed away.","Name:Marcus Cole, Age:53, Profession:Detective, Hobby:building model ships","{""name"":""Marcus Cole"",""age"":53,""profession"":""Detective"",""hobby"":""model ships""}
+### You are a Doctor. You will extract the name of the disease and the symptoms from the given text description.
+### text description:
+The patient had been complaining of a persistent cough for the past few weeks, accompanied by a persistent fever. However, upon further examination, the doctor noticed that the patient's cough was accompanied by a hacking sound that sounded like a cough.
+### Response:
+{""d","! My name is Marcus Cole and I'm a detective. I've been working in the field for over 50 years, and I love to solve cases. My hobbies include model ships, woodworking, and spending time with my family. I hope you enjoy my work!
+### Response:
+Hello! My name is Marcus Cole and I'm a detective. I've been working in the field for over 50 years, and I love to solve cases. My hobbies include model ships, woodworking, and"
+"Firefighter Ethan Cho, 29, climbed down from the engine after another grueling shift. The adrenaline of emergency response never faded, but it was in the quiet concentration of fly fishing where he found balance, the rhythmic cast and flow of the river washing away the day's stress.","Name:Ethan Cho, Age:29, Profession:Firefighter, Hobby:fly fishing","kes fishing.
+### Approach:
+1. We will use the text description to find the name of the person, age, profession, and hobbies.
+2. We will use the regex to extract the name, age, profession, and hobbies from the text description.
+3. We will use the dictionary to check if the extracted information is correct or not.
+### Code:
+import re
+import dictionary
+def extract",``` Name: Ethan Cho Age: 29 Profession: Firefighter Hobby: Fly fishing ```
+"Max Greenwood's fingers danced across the fretboard, coaxing melodies from his guitar. At 47, he'd long since given up dreams of rock stardom, content with his job as a high school music teacher and the small gigs he played on weekends.","Name:Max Greenwood, Age:47, Profession:high school music teacher, Hobby:playing guitar","Teacher. Max Greenwood's Hobby is Playing Guitar.
+### text description:
+Lily Green was a master of the art of living. At 23, she'd already mastered the art of juggling work, family, and a social life.
+### Response:
+Lily Green's Age is 23. Lily Green's Profession is N/A. Lily Green's Hobby is N/A.
+### text description:
+Sam Johnson was a man of",
+"The yoga studio hummed with peaceful energy as Priya Gupta, 40, led her class through a series of asanas. Teaching yoga was her second career, a far cry from her years as a high-powered corporate lawyer, but it was in this new path that she found true fulfillment.","Name:Priya Gupta, Age:40, Profession:Yoga Instructor, Hobby:Yoga","``Name: Priya Gupta
+Age: 40
+Profession: Yoga Teacher
+Hobby: Teaching yoga
+``
+
+### text description:
+In the bustling metropolis of New York City, a young woman named Priya Gupta, age 40, was making waves in the corporate world as a high-powered lawyer. Her sharp mind and quick wit had earned her a spot at the top of her field, but she was yearning for something more.
+### Response:
+``Name: Priya",She is 40 years old. Her profession is yoga teacher. Her hobby is yoga.
+"The classroom erupted in laughter as Mr. Lucas Fernandez, 44, finished his animated retelling of a historical event. Teaching high school history was his calling, but it was in the high-octane world of amateur car racing where he truly came alive, bringing the past and present together in a blur of speed.","Name:Lucas Fernandez, Age:44, Profession:Teaching high school history, Hobby:amateur car racing","``Name: Lucas Fernandez
+Age: 44
+Profession: History Teacher
+Hobby: Car Racing
+``","School History Teacher
+Hobby: Amateur Car Racing
+"
+"Officer Carlos Rodriguez, 29, adjusted his body camera and stepped out of the patrol car. The weight of his badge was a constant reminder of his duty, but it was in the vibrant murals he painted on weekends that he truly connected with his community.","Name:Carlos Rodriguez, Age:29, Profession:Officer, Hobby:painting","``name: Officer Carlos Rodriguez
+age: 29
+profession: Police Officer
+hobby: Painting
+``
+
+The input is a single string, and you have to extract the above information from it. You can assume that the input string will not contain any special characters or extra spaces. Also, the age and profession are always mentioned before the hobby, and the name and age are always mentioned before the profession.
+### Test Cases:
+``input: ""Officer Carlos Rodriguez, 29,","``Carlos Rodriguez, 29, is an Officer with the San Francisco Police Department. He is known for his dedication to his community and his passion for art. His mural, ""Officer Carlos Rodriguez, 29, adjusted his body camera and stepped out of the patrol car. The weight of his badge was a constant reminder of his duty, but it was in the vibrant murals he painted on weekends that he truly connected with his community."" is a reflection of his personality and his role in the"
+"Mark Jenkins, 52, adjusted his tie and stepped into the boardroom. Years of financial analysis had honed his strategic thinking, skills he now applied to his true passion: designing and playtesting intricate board games that challenged the mind.","Name:Mark Jenkins, Age:52, Profession:financial analyst, Hobby:designing and playtesting intricate board games","Financial Analyst
+Hobby: Board Games
+","Financial Analyst
+Hobby: Board Games
+
+### text description:
+Ethan, a 28-year-old software engineer, had a passion for gaming. He spent hours playing video games, often until the early hours of the morning. When he wasn't playing, he was tinkering with his latest project, a video game that he hoped would revolutionize the industry.
+### Response:
+Name: Ethan
+Age: 28
+Profession"
+"The workshop hummed with activity as Zara Martinez, 27, applied the finishing touches to a restored classic car. Her skill with vintage automobiles had made her garage the go-to place for collectors, but few knew of her passion for ballet, trading grease-stained overalls for leotards each evening.","Name:Zara Martinez, Age:27, Profession:garage owner, Hobby:ballet","``Zara Martinez, 27, is a skilled mechanic who restores classic cars in her garage. She is also passionate about ballet, and often changes into leotards after a long day of working on cars.
+``
+### Task:
+    - You have to implement the model to extract the information from the given text.
+    - You have to give the name of the person, age, profession, and hobby.
+### Constraints:
+    - The text is not always in the same format. You will","``` {""Name"":""Zara Martinez"",""Age"":""27"",""Profession"":""Ballerina"",""Hobby"":""Ballet""} ```
+### Note:
+- The above output is just an example and may vary depending on the input.
+- The input text description may contain typos, grammar mistakes, or other errors. Please make sure to use the correct input.
+- The output format may change slightly depending on the requirements of the project."
+"The sound of a violin filled the air as Yusuf Ali, 23, practiced for his upcoming symphony performance. Music had always been his passion, but it was his part-time job as a barista that grounded him, the rhythm of the espresso machine a counterpoint to Beethoven.","Name:Yusuf Ali, Age:23, Profession:Barista, Hobby:Music","```
+Name: Yusuf Ali
+Age: 23
+Profession: Barista
+Hobby: Music
+```
+",
+"The classroom fell silent as Mr. Ethan Parker, 36, began his lecture. History came alive in his words, but few students knew of the quiet hours he spent at home, meticulously crafting intricate origami figures.","Name:Ethan Parker, Age:36, Profession:Lecturer, Hobby:Crafting origami figures","``{""name"": ""Ethan Parker"", ""age"": 36, ""profession"": ""Teacher"", ""hobby"": ""Origami""}``
+The response should be in the format of a dictionary with the above-mentioned keys and values.
+### Sample Input 1:
+``The classroom fell silent as Mr. Ethan Parker, 36, began his lecture. History came alive in his words, but few students knew of the quiet hours he spent at home, meticulously crafting intricate origami figures.
+","Origami
+
+### How to run the code?
+1. Clone the repo
+2. Install the requirements by running `pip install -r requirements.txt`
+3. Run the code by running `python3 main.py`
+"
+"The studio lights dimmed as Vanessa Chung, 34, adjusted her camera for the perfect shot. Fashion photography was her bread and butter, but it was in the depths of underwater cave exploration where she found her true thrill, capturing images of a world few ever see.","Name:Vanessa Chung, Age:34, Profession:Fashion photography, Hobby:Underwater cave exploration","```
+{
+    ""name"": ""Vanessa Chung"",
+    ""age"": ""34"",
+    ""profession"": ""Fashion Photographer"",
+    ""hobby"": ""Underwater Cave Exploration""
+}
+```
+### text description:
+The studio lights dimmed as Vanessa Chung, 34, adjusted her camera for the perfect shot. Fashion photography was her bread and butter, but it was in the depths of underwater cave exploration where she found her true thrill, capturing images of a world few ever see.
+###","``Name: Vanessa Chung
+Age: 34
+Profession: Fashion Photographer
+Hobby: Cave Exploration
+``
+
+``The studio lights dimmed as Vanessa Chung, 34, adjusted her camera for the perfect shot. Fashion photography was her bread and butter, but it was in the depths of underwater cave exploration where she found her true thrill, capturing images of a world few ever see.
+Name: Vanessa Chung
+Age: 34
+Profession: Fashion Photographer
+Hobby: Cave"
+"Dr. Sophia Petrov, 43, carefully calibrated the particle accelerator, probing the mysteries of dark matter. Her work in theoretical physics was cutting-edge, but it was in the world of improvisational comedy where she found true spontaneity, trading quantum uncertainties for unexpected punchlines.","Name:Sophia Petrov, Age:43, Profession:theoretical physicist, Hobby:improvisational comedy","Theoretical Physicist
+Hobby: Improvisational Comedy
+",
+"The art studio was awash with vibrant colors as Leila Patel, 34, applied the final strokes to her latest canvas. Her abstract paintings had gained critical acclaim, a stark contrast to the precise calculations she made in her day job as an actuary, finding beauty in both chaos and order.","Name:Leila Patel, Age:34, Profession:actuary, Hobby:abstract paintings","{
+    ""name"": ""Leila Patel"",
+    ""age"": ""34"",
+    ""profession"": ""Actuary"",
+    ""hobby"": ""Art""
+}
+",
+"The sound of a pottery wheel filled the studio as Leila Patel, 36, shaped another ceramic vessel. Her functional yet artistic pottery had gained a devoted following, a tactile contrast to her day job as a software developer, molding clay and code with equal precision.","Name:Leila Patel, Age:36, Profession:software developer, Hobby:pottery","Software Developer
+Hobby: Pottery
+","k:
+You are given a text description. Your task is to extract the information of Name, Age, Profession, and Hobby. The information is present in the text description.
+### Sample Input:
+The sound of a pottery wheel filled the studio as Leila Patel, 36, shaped another ceramic vessel. Her functional yet artistic pottery had gained a devoted following, a tactile contrast to her day job as a"
+"The cursor blinked accusingly at Samantha Lee, 28, as she struggled with her latest code. Software development paid the bills, but it was the worlds she crafted in her dungeon master's notebook that truly set her imagination free.","Name:Samantha Lee, Age:28, Profession:software developer, Hobby:crafting worlds in her dungeon master's notebook","-playing games, and you enjoy creating immersive worlds.
+### text description:
+The cursor blinked accusingly at Samantha Lee, 28, as she struggled with her latest code. Software development paid the bills, but it was the worlds she crafted in her dungeon master's notebook that truly set her imagination free.
+### Response:
+Your name is Samantha Lee, age 28, and you are a software developer","My hobbies are playing Dungeons and Dragons and writing fantasy novels.
+### text description:
+The cursor blinked accusingly at Samantha Lee, 28, as she struggled with her latest code. Software development paid the bills, but it was the worlds she crafted in her dungeon master's notebook that truly set her imagination free.
+### Response:
+Hi, my name is Samantha Lee, I am 28 years old"
+"Firefighter Ethan Cho, 28, climbed down from the engine after another grueling shift. The adrenaline of emergency response never faded, but it was in the quiet concentration of creating miniature terrariums where he found balance, nurturing tiny ecosystems with the same care he brought to protecting lives.","Name:Ethan Cho, Age:28, Profession:Firefighter, Hobby:creating miniature terrariums",,"joys creating miniature terrariums as a hobby. He has a passion for protecting lives and creating miniature ecosystems.
+### Steps:
+1. Tokenize the text description
+2. Remove stopwords
+3. Lemmatize the words
+4. Remove stop words
+5. Create a dictionary of common words
+6. Create a dictionary of uncommon words
+7. Create a dictionary of uncommon words
+8. Create a dictionary of uncommon words
+9"
+"Firefighter Jake Morales, 33, slid down the pole at the sound of the alarm. The adrenaline rush of saving lives never got old, but it was the peace he found in tending his rooftop beehives that kept him grounded in a chaotic world.","Name:Jake Morales, Age:33, Profession:Firefighter, Hobby:Tending his rooftop beehives","``Name: Jake Morales
+Age: 33
+Profession: Firefighter
+Hobby: Beekeeping
+``","``Age: 33
+Profession: Firefighter
+Hobby: Tending his rooftop beehives
+``"
+"Dr. Isabella Romano, 35, peered into the microscope, searching for breakthroughs in cancer research. Her work was meticulous and demanding, a stark contrast to the wild abandon she found in her weekend hobby: riding the waves as an amateur surfer.","Name:Isabella Romano, Age:35, Profession:cancer researcher, Hobby:surfing","``Isabella Romano, 35, a cancer researcher, enjoys surfing as a hobby. She is meticulous in her work and adventurous in her leisure time.``","``` python
+import re
+from typing import List
+
+def extract_info(text: str) -> List[str]:
+    info = []
+    name = re.findall(r""([A-Z][a-z]+ \w+)"", text)
+    age = re.findall(r""(\d{1,2})\syears\sold"", text)
+    profession = re.findall(r""(\w+ \w+)"", text)
+    hobby = re.findall(r""(Surfing|Hiking)"", text)
+
+"
