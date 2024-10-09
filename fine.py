@@ -28,7 +28,8 @@ with open('/home/lina/finetuneLLama/Llama3finetune/dataProcess/CustomeData.json'
 
 
 def generate_trainning_prompt(data_point):
-    full_prompt =f"""Extract Name, Age, Profession, and Hobby information from the given text. Text: {data_point["input"]}  The output:{data_point["output"]}"""
+    #full_prompt =f"""Extract Name, Age, Profession, and Hobby information from the given text. Text: {data_point["input"]}  The output:{data_point["output"]}""" 
+    full_prompt =f"""Text: {data_point["input"]}  The output:{data_point["output"]}""" + tokenizer.eos_token
     return full_prompt
 train_data = [{"text":generate_trainning_prompt(j) } for j in data]
 dataset = Dataset.from_list(train_data)
@@ -54,7 +55,9 @@ model, tokenizer = setup_chat_format(model, tokenizer)
 
 
 def generate_inference_prompt(data_point):
-    full_prompt =f"""Extract Name, Age, Profession, and Hobby information from the given text. Text: {data_point["input"]}  The output:"""
+    full_prompt =f"""Text: {data_point["input"]}  The output:"""
+
+    #full_prompt =f"""Extract Name, Age, Profession, and Hobby information from the given text. Text: {data_point["input"]}  The output:"""
     return full_prompt
 
 results_before_finetune = []
@@ -68,7 +71,7 @@ for data_point in data[0:20]:
         device_map="auto",
     )
     outputs = pipe(prompt, max_new_tokens=120, do_sample=True, temperature=0.7, top_k=50, top_p=0.95)
-    results_before_finetune.append(outputs[0]["generated_text"])
+    results_before_finetune.append(outputs[0]["generated_text"].lstrip(prompt))
 
 
 
@@ -92,7 +95,7 @@ if len(wandb_project) > 0:
 
 
 args = TrainingArguments(
-    output_dir="sft_model_path",
+    output_dir="sft_model_path2",
     num_train_epochs=100,
     per_device_train_batch_size=4,
     gradient_accumulation_steps=2,
@@ -129,7 +132,7 @@ trainer = SFTTrainer(
 )
 trainer.train()
 
-new_model = "./llama3-sft-10082"
+new_model = "./llama3-sft-100823"
 trainer.save_model(new_model)
 
 
@@ -147,8 +150,8 @@ base_model_reload, tokenizer = setup_chat_format(base_model_reload, tokenizer)
 model = PeftModel.from_pretrained(base_model_reload, new_model)
 model = model.merge_and_unload()
 model = model.to("cuda")
-model.save_pretrained("llama-3-3b-SFT")
-tokenizer.save_pretrained("llama-3-3b-SFT")
+model.save_pretrained("llama-3-3b-SFT2")
+tokenizer.save_pretrained("llama-3-3b-SFT2")
 
 results = []
 for data_point in data[0:20]:
@@ -164,11 +167,11 @@ for data_point in data[0:20]:
     results.append({
         "text": data_point["input"],
         "chatgpt output": data_point["output"],
-        "output after finetune": outputs[0]["generated_text"],
+        "output after finetune": outputs[0]["generated_text"].lstrip(prompt),
     })
    
 # Convert results to DataFrame and save to CSV
 results_df = pd.DataFrame(results)
 results_df['output before finetune'] = results_before_finetune
-results_df.to_csv("llama_finetune_inference_results21.csv", index=False)
+results_df.to_csv("llama_finetune_inference_results22.csv", index=False)
 
