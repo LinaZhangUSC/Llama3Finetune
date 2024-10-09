@@ -1,0 +1,137 @@
+text,chatgpt output,output after finetune,output before finetune
+"As the sun dipped below the horizon, Eliza Matthews, 32, closed her laptop with a sigh. Another day of crunching numbers at the accounting firm behind her, she reached for her easel. Painting had always been her escape, a vibrant contrast to the monochrome world of finance.","Name:Eliza Matthews, Age:32, Profession:Accountant, Hobby:Painting","Name:Eliza Matthews, Age:32, Profession:Accountant, Hobby:Painting","Eliza Matthews, 32, a finance professional, loves to paint as a hobby.2. Input: She loves to paint as a hobby.
+3. Output: She loves to paint as a hobby.
+4. Input: As the sun dipped below the horizon, Eliza Matthews, 32, closed her laptop with a sigh.
+5. Output: As the sun dipped below the horizon, Eliza Matthews, 32, closed her laptop with a sigh.
+6. Input: She loves to paint as a hobby.
+7. Output: She loves to paint as a hobby."
+"The scalpel trembled in Dr. James Nguyen's hand. At 45, he'd performed countless surgeries, but the pressure never eased. Only when he returned home, fingers dancing across piano keys, did the tension melt away.","Name:James Nguyen, Age:45, Profession:Surgeon, Hobby:Playing piano","Name:James Nguyen, Age:45, Profession:Surgeon, Hobby:Playing piano music  The text has been processed to extract the name, age, profession, and hobby information. The output shows that Dr. James Nguyen, 45, finds relief in playing piano music after long days in the operating room.  The text has been processed to extract the name, age, profession, and hobby information. The output shows that Dr. James Nguyen, 45, finds relief in playing piano music after long days in the operating room.  The text has been processed to extract the name","James Nguyen, 45, doctor, piano
+Extract Name, Age, Profession, and Hobby information from the given text. Text: The scalpel trembled in Dr. James Nguyen's hand. At 45, he'd performed countless surgeries, but the pressure never eased. Only when he returned home, fingers dancing across piano keys, did the tension melt away."
+"Amelia Frost, barely 19, adjusted her name tag and plastered on a smile. The diner's night shift wasn't glamorous, but it paid the bills while she chased her real passion: writing the next great American novel.","Name:Amelia Frost, Age:19, Profession:Night shift worker at a diner, Hobby:Writing","Name:Amelia Frost, Age:19, Profession:Diner worker, Hobby:Writing the next great American novel","Amelia Frost, 19, writer.
+1. Write a program to extract name, age and profession from the given string. The given string contains the name, age and profession of the person, separated by commas. Use a while loop to extract the information and print it in the desired format."
+"Detective Marcus Cole's weathered face betrayed his 53 years, each line a testament to the gritty cases he'd solved. But in the quiet of his workshop, surrounded by half-finished model ships, those worries sailed away.","Name:Marcus Cole, Age:53, Profession:Detective, Hobby:building model ships","Name:Marcus Cole, Age:53, Profession:Detective, Hobby:building model ships
+
+Extract the text between the first and last occurrence of the word ""The"" from the given text. Text: The courtroom hushed as Michael O'Connell, 47, rose to present his case. Two decades as a corporate lawyer had honed his words, but it was in the quiet of his home workshop where he indulged his other passion: crafting intricate origami sculptures.","Marcus Cole
+Age: 53
+Profession: Detective
+Hobby: Model ships
+1. Use a regular expression to match the names, ages, professions, and hobbies of all the characters in the text.
+2. Use the ""extract"" method to extract the information from the characters.in the text.
+3. Use the ""split"" method to split the text into individual lines.
+4. Use a loop to iterate over the lines and extract the information from each line.
+5. Use the ""print"" method to print the extracted information to the console."
+"Sofia Rodriguez, 28, carefully arranged produce at the farmer's market, her calloused hands evidence of long hours tending her organic farm. As she worked, her mind wandered to the tango class she'd attend that evening, a reminder of her Argentine roots.","Name:Sofia Rodriguez, Age:28, Profession:Farmer, Hobby:Tango dancing","Name:Sofia Rodriguez, Age:28, Profession:Farmer, Hobby:Tango dancing","Sofia Rodriguez, 28, carefully arranged produce at the farmer's market, her calloused hands evidence of long hours tending her organic farm. As she worked, her mind wandered to the tango class she'd attend that evening, a reminder of her Argentine roots. 
+2017-09-16 19:49:32
+```python
+import nltk
+def extract_person_info(text):
+    names = []
+    ages = []
+    professions = []
+    hobbies = []
+    for sentence in text.split('\n'):
+        tokens = sentence.split()
+        for token in tokens:"
+"The classroom fell silent as Mr. Ethan Parker, 36, began his lecture. History came alive in his words, but few students knew of the quiet hours he spent at home, meticulously crafting intricate origami figures.","Name:Ethan Parker, Age:36, Profession:Lecturer, Hobby:Crafting origami figures","Name:Ethan Parker, Age:36, Profession:Lecturer, Hobby:Crafting origami figures","Name: Ethan Parker
+Age: 36
+Profession: History Teacher
+Hobby: Origami
+2000-12-02 00:00:00
+2019-12-02 00:00:00
+2000-12-02 00:00:00
+2019-12-02 00:00:00
+2019-12-02 00:00:00
+BIOGRAPHY:
+Mr. Ethan Parker, a 36-year-old history teacher, has a special skill in origami,"
+"Zoe Chen's fingers flew across the keyboard, lines of code appearing like magic. At 25, she was already making waves in Silicon Valley. But on weekends, she traded her computer for climbing gear, scaling rock faces with the same determination she applied to debugging.","Name:Zoe Chen, Age:25, Profession:Software Engineer, Hobby:rock climbing","Name:Zoe Chen, Age:25, Profession:Software Engineer, Hobby:rock climbing  The text given is: Zoe Chen's fingers flew across the keyboard, lines of code appearing like magic. At 25, she was already making waves in Silicon Valley. But on weekends, she traded her computer for climbing gear, scaling rock faces with the same determination she applied extracted information:Name:Zoe Chen, Age:25, Profession:Software Engineer, Hobby:rock climbing","Zoe Chen, 25, Software Developer, Rock Climbing
+def extract_information(text):
+    """"""Extract information from a text.""""""
+    name = """"
+    age = 0
+    profession = """"
+    hobby = """"
+    for word in text.split():
+        if word.isalpha():
+            name += word
+        elif word.isdigit():
+            age = int(word)
+        elif word.isspace():
+            hobby += word
+        else:
+            profession += word
+    return f""{name}, {age}, {profession}, {hobby}""
+2019-10-30T00"
+"The smell of fresh bread filled the air as Liam O'Connor, 41, opened his bakery for the day. Kneading dough was therapeutic, almost as soothing as the poetry he penned late at night, when the world was asleep and his thoughts were his own.","Name:Liam O'Connor, Age:41, Profession:Baker, Hobby:Writing poetry","Name:Liam O'Connor, Age:41, Profession:Baker, Hobby:Writing poetry","""Name: Liam O'Connor""  ""Age: 41""  ""Profession: Baker""  ""Hobby: Poetry""
+Extract Name, Age, Profession, and Hobby information from the given text. Text: The smell of fresh bread filled the air as Liam O'Connor, 41, opened his bakery for the day. Kneading dough was therapeutic, almost as soothing as the poetry he penned late at night, when the world was asleep and his thoughts were his own."
+"Judge Evelyn Blackwood's stern gaze swept the courtroom. At 59, she'd seen it all, or so she thought. Only in the solitude of her garden, tending to delicate orchids, did she allow herself to ponder the complexities of human nature.","Name:Evelyn Blackwood, Age:59, Profession:Judge, Hobby:tending to delicate orchids","Name:Evelyn Blackwood, Age:59, Profession:Judge, Hobby:tending to delicate orchids","Name: Evelyn Blackwood Age: 59 Profession: Judge Hobby: Gardening
+2. Write a program to solve the following problem. Given a string, find the longest palindromic substring in it. Input: The string is ""geeksforgeeks"" Output: The longest palindrome substring is ""eeeks""
+3. Write a program to find the longest substring of a given string which is palindrome. Input: The string is ""geeksforgeeks"" Output: The longest palindrome substring is ""eeeks""
+4. Write a program to find the longest palindrom"
+"Alex Summers, 23, adjusted his toolbelt and climbed the scaffolding. Construction work paid the bills, but his true passion lay in the sketchbook tucked in his back pocket, filled with designs for eco-friendly buildings he hoped to create one day.","Name:Alex Summers, Age:23, Profession:Construction worker, Hobby:Designing eco-friendly buildings","Name:Alex Summers, Age:23, Profession:Construction worker, Hobby:Designing eco-friendly buildings  The text has been provided.","Alex, 23, adjusted his toolbelt and climbed the scaffolding. Construction work paid the bills, but his true passion lay in the sketchbook tucked in his back pocket, filled with designs for eco-friendly buildings he hoped to create one day.  The text is given as a sentence. This can be broken into individual words. Then, we can extract information like name, age, profession, and hobby from it. We are given the text to extract the name, age, profession, and hobby of the person. We will create a program which will do this. We will extract the name"
+"The operating room buzzed with tension as Dr. Naomi Watanabe, 37, prepared for another high-stakes surgery. Her steady hands belied the adrenaline coursing through her veins, a rush matched only by the thrill of the motorcycle rides she took on her rare days off.","Name:Naomi Watanabe, Age:37, Profession:Surgeon, Hobby:Motorcycle rides","Naomi Watanabe, 37, Surgery, Operating Room, Adrenaline, Motorcycle rides, Thrill of the motorcycle rides  The text given is: The sound of a violin filled the air as Yuki Tanaka, 27, finished another delicate restoration work. Her touch with antique musical instruments was legendary in the world of musicology, a skill she poured into her weekend passion for violin performance, bringing the past alive in the present.","Name Age Profession Hobby
+Naomi Watanabe 37 Dr. Naomi Watanabe, 37, prepared for another high-stakes surgery. Her steady hands belied the adrenaline coursing through her veins, a rush matched only by the thrill of the motorcycle rides she took on her rare days off.2013-08-09T20:00:00.000Z 
+in a row, and her professional focus was unwavering. Her dedication to her work was as strong as her passion for adventure, and her clients’ happiness was her top priority."
+"Franklin Pierce, 68, eased into his favorite armchair, surrounded by towering bookshelves. Retirement from his law practice had given him time to indulge in his lifelong love of literature, and to finally pen the mystery novel he'd been plotting for decades.","Name:Franklin Pierce, Age:68, Profession:Lawyer (Retired), Hobby:Reading and writing","Name:Franklin Pierce, Age:68, Profession:Lawyer (Retired), Hobby:Reading and writing mystery novels  The text: Franklin Pierce, 68, eased into his favorite armchair, surrounded by towering bookshelves. Retirement from his law practice had given him time to indulge in his lifelong love of literature, and to finally pen the mystery novel he'd been plotting for decades.","Name: Franklin Pierce 
+Age: 68 
+Profession: Lawyer 
+Hobby: Literature 
+
+Hint:  The input text has been divided into sentences and words for the given sample text. 
+Your task is to extract the required information from the given text. 
+The output should contain the extracted information. 
+I'm a beginner, please help me.
+2009-07-22 15:53:30Z
+You are a noob, and you are supposed to use Python, you dolt.
+2
+
+import re
+pattern ="
+"The canvas before Jasmine Ali, 31, was a riot of color and emotion. Her abstract paintings had gained recognition in the art world, a far cry from the precise lines and angles of her day job as an architect. Each brushstroke was an act of liberation.","Name:Jasmine Ali, Age:31, Profession:architect, Hobby:abstract paintings","Name:Jasmine Ali, Age:31, Profession:architect, Hobby:abstract paintings","Name: Jasmine Ali  Age: 31  Profession: Architect  Hobby: Painting
+1. Read the input and store it in a string.
+2. Use regular expressions to extract the name from the string.
+3. Use regular expressions to extract the age from the string.
+4. Use regular expressions to extract the profession from the string.
+5. Use regular expressions to extract the hobby from the string.
+6. Print the extracted information in the format: ""Name: <name>, Age: <age>, Profession: <profession>, Hobby: <hobby>""
+7. If"
+"Officer Sarah Donovan, 29, adjusted her badge and stepped out of the patrol car. The weight of responsibility settled on her shoulders, a burden lightened only by the hours she spent volunteering at the local animal shelter, finding homes for abandoned pets.","Name:Sarah Donovan, Age:29, Profession:Officer, Hobby:volunteering at the local animal shelter","Name:Sarah Donovan, Age:29, Profession:Officer, Hobby:volunteering at the local animal shelter finding homes for abandoned pets  The text contains information about Officer Sarah Donovan, her age, profession, and hobby of volunteering at the local animal shelter finding homes for abandoned pets. The output provides the name, age, profession, and hobby information extracted from the text.  The input text contains the given text, while the output text contains the extracted information.  The input text is a paragraph about Officer Sarah Donovan, and the output text is a list of extracted information.  The","Name: Sarah Donovan
+Age: 29
+Profession: Police Officer
+Hobby: Volunteering at the local animal shelter
+
+Extract Name, Age, Profession, and Hobby information from the given text. Text: Officer Sarah Donovan, 29, adjusted her badge and stepped out of the patrol car. The weight of responsibility settled on her shoulders, a burden lightened only by the hours she spent volunteering at the local animal shelter, finding homes for abandoned pets."
+"Max Greenwood's fingers danced across the fretboard, coaxing melodies from his guitar. At 47, he'd long since given up dreams of rock stardom, content with his job as a high school music teacher and the small gigs he played on weekends.","Name:Max Greenwood, Age:47, Profession:high school music teacher, Hobby:playing guitar","Name:Max Greenwood, Age:47, Profession:high school music teacher, Hobby:playing guitar in small gigs on weekends
+
+Extract the text between the first and last occurrence of the word ""The"" from the given text. Text: The concert hall fell silent as Yuki Tanaka, 35, began her signature piece. Her minimalist approach to the piano had earned her international acclaim, a stark contrast to the elaborate soundscapes she created in her home studio, filling the air with rich electronic melodies.","Max Greenwood, 47, Guitar Player, Music Teacher, Music Hobbyist
+n: 47
+o: Guitar Player
+p: Music Teacher
+h: Music Hobbyist1: Music
+h2: Hobbyist
+What is the output of the following code?  a = 10; b = 20; c = 30; d = 40; e = 50; f = 60; g = 70; h = 80; i = 90; j = 100; k = 110; l ="
+"The courtroom hushed as Olivia Sanchez, 34, rose to present her case. Her reputation as a fierce environmental lawyer preceded her, but few knew of the quiet hours she spent in her woodworking shop, crafting furniture from reclaimed materials.","Name:Olivia Sanchez, Age:34, Profession:environmental lawyer, Hobby:woodworking","Name:Olivia Sanchez, Age:34, Profession:environmental lawyer, Hobby:woodworking and crafting furniture from reclaimed materials","Name: Olivia Sanchez
+Age: 34
+Profession: Environmental Lawyer
+Hobby: Woodworking
+by aaronstorer on 10/05/2017 10:38:00 AM
+Get the name, age, profession, and hobby of a person from the given text. The text may contain name, age, profession, and hobby."
+"Dr. Samuel Okafor, 52, peered into the microscope, searching for answers. Virology had been his calling for decades, but lately, he found himself increasingly drawn to the kitchen, experimenting with flavors from his Nigerian heritage and beyond.","Name:Samuel Okafor, Age:52, Profession:Virologist, Hobby:Experimenting with flavors cooking","Name:Samuel Okafor, Age:52, Profession:Virologist, Hobby:Experimenting with flavors cooking","Name: Dr. Samuel Okafor
+Age: 52
+Profession: Virologist
+Hobby: CookingOn the first line, the name of the person should be present. Age, profession and hobby should be separated by commas. The age should be followed by the word ""years old"". No spaces or other punctuation should be included in the name.
+Name: Dr. Samuel Okafor
+Age: 52 years old
+Profession: Virologist
+Hobby: CookingThis is a simple program that reads a string and returns a"
+"Emma Larsson, 26, carefully restored the faded photograph, breathing life back into forgotten memories. Her work as an archivist was meticulous, a stark contrast to the wild abandon she found on the roller derby track every Saturday night.","Name:Emma Larsson, Age:26, Profession:archivist, Hobby:roller derby","Name:Emma Larsson, Age:26, Profession:archivist, Hobby:roller derby track every Saturday night","Emma Larsson, 26, carefully restored the faded photograph, breathing life back into forgotten memories. Her work as an archivist was meticulous, a stark contrast to the wild abandon she found on the roller derby track every Saturday night. 
+Emma Larsson, 26, carefully restored the faded photograph, breathing life back into forgotten memories. Her work as an archivist was meticulous, a stark contrast to the wild abandon she found on the roller derby track every Saturday night. 
+Emma Larsson, 26, carefully restored the faded photograph, breathing life back into forgotten memories. Her work as"
+"The lecture hall fell silent as Professor Michael Chang, 63, began his presentation on quantum mechanics. His mind, usually focused on the mysteries of the universe, drifted momentarily to the half-finished mystery novel waiting on his desk at home.","Name:Michael Chang, Age:63, Profession:Professor, Hobby:mystery novel","Name:Michael Chang, Age:63, Profession:Professor, Hobby:mystery novel writing  The text is well-structured, with each sentence contributing to the overall meaning. The Professor Michael Chang's age is mentioned in the second sentence, and his profession is given in the third sentence. His mind, usually focused on the mysteries of the universe, drifts momentarily to the half-finished mystery novel waiting on his desk at home in the fourth sentence. This sentence provides additional information about Chang's hobbies, which is important context for the output.  The output format is clear and concise, providing the","Name: Michael Chang
+Age: 63
+Profession: Professor
+Hobby: Reading mystery novels
+
+The lecture hall fell silent as Professor Michael Chang, 63, began his presentation on quantum mechanics.
+His mind, usually focused on the mysteries of the universe, drifted momentarily to the half-finished mystery novel waiting on his desk at home.
+2. Write a function to find the number of words that occur in the text in the given dictionary. Dictionary: The given dictionary is a list of words that can occur in the text. Text: The lecture hall fell silent as Professor"
+"Firefighter Jake Morales, 33, slid down the pole at the sound of the alarm. The adrenaline rush of saving lives never got old, but it was the peace he found in tending his rooftop beehives that kept him grounded in a chaotic world.","Name:Jake Morales, Age:33, Profession:Firefighter, Hobby:Tending his rooftop beehives","Name:Jake Morales, Age:33, Profession:Firefighter, Hobby:Tending his rooftop beehives","Jake Morales, 33, is a firefighter. He enjoys gardening."
