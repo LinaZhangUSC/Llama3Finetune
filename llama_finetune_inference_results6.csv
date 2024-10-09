@@ -1,0 +1,141 @@
+text,chatgpt output,output after finetune,output before finetune
+"As the sun dipped below the horizon, Eliza Matthews, 32, closed her laptop with a sigh. Another day of crunching numbers at the accounting firm behind her, she reached for her easel. Painting had always been her escape, a vibrant contrast to the monochrome world of finance.","Name:Eliza Matthews, Age:32, Profession:Accountant, Hobby:Painting",,
+"The scalpel trembled in Dr. James Nguyen's hand. At 45, he'd performed countless surgeries, but the pressure never eased. Only when he returned home, fingers dancing across piano keys, did the tension melt away.","Name:James Nguyen, Age:45, Profession:Surgeon, Hobby:Playing piano","```
+Name: James Nguyen
+Age: 45
+Profession: Surgeon
+Hobby: Playing Piano
+```
+### Constraints:
+1. You can use any language you want to implement this. (Python, JavaScript, Java, C++, Rust, etc.)
+2. You can use any external libraries you want to implement this. (Tensorflow, PyTorch, Hugging Face, etc.)
+3. You can use any data science libraries you want to implement this. (N","Surgeon, Hobby: Playing piano.
+### Input:
+The scalpel trembled in Dr. James Nguyen's hand. At 45, he'd performed countless surgeries, but the pressure never eased. Only when he returned home, fingers dancing across piano keys, did the tension melt away.
+### Output:
+Name: James Nguyen, Age: 45, Profession: Surgeon, Hobby: Playing piano.
+### Input:
+The scalpel trem"
+"Amelia Frost, barely 19, adjusted her name tag and plastered on a smile. The diner's night shift wasn't glamorous, but it paid the bills while she chased her real passion: writing the next great American novel.","Name:Amelia Frost, Age:19, Profession:Night shift worker at a diner, Hobby:Writing","``Name: Amelia Frost
+Age: 19
+Profession: Writer
+Hobby: Writing
+```","Writer
+Hobby: Writing
+"
+"Detective Marcus Cole's weathered face betrayed his 53 years, each line a testament to the gritty cases he'd solved. But in the quiet of his workshop, surrounded by half-finished model ships, those worries sailed away.","Name:Marcus Cole, Age:53, Profession:Detective, Hobby:building model ships","```
+{
+  ""name"": ""Marcus Cole"",
+  ""age"": 53,
+  ""profession"": ""Detective"",
+  ""hobby"": ""Modeling""
+}
+```
+### Input:
+```
+Detective Marcus Cole's weathered face betrayed his 53 years, each line a testament to the gritty cases he'd solved. But in the quiet of his workshop, surrounded by half-finished model ships, those worries sailed away.
+```
+### Output:
+```
+{
+  ""","``Name: Marcus Cole
+Age: 53
+Profession: Detective
+Hobby: Model Ships
+``
+
+The task is to extract the information from the text. The input is a string, and the output is a JSON object.
+The input will be a string that describes a person. The string will have the following format:
+``Name: <NAME>
+Age: <AGE>
+Profession: <PROFESSION>
+Hobby: <HOBBY>
+``
+The output should be"
+"Sofia Rodriguez, 28, carefully arranged produce at the farmer's market, her calloused hands evidence of long hours tending her organic farm. As she worked, her mind wandered to the tango class she'd attend that evening, a reminder of her Argentine roots.","Name:Sofia Rodriguez, Age:28, Profession:Farmer, Hobby:Tango dancing","Farmer
+Hobby: Tending her organic farm
+Tango class
+### Assumptions:
+1. The input text description is in English.
+2. The input text description contains all the required information.
+3. The input text description is well formatted.
+4. The input text description is not a duplicate.
+5. The input text description is not a misspelled text.
+6. The input text description is not a sentence","Farmer
+Hobby: Tending her organic farm and tango class
+### Sample Test Cases:
+1. **text description:**
+Jenifer Lee, 32, walked her dog through the park, her blonde hair flying in the wind, her dog's leash in her hand. As she walked, she thought about the dinner she'd make for her husband that evening, a reminder of her Korean heritage.
+**Response:**
+"
+"The classroom fell silent as Mr. Ethan Parker, 36, began his lecture. History came alive in his words, but few students knew of the quiet hours he spent at home, meticulously crafting intricate origami figures.","Name:Ethan Parker, Age:36, Profession:Lecturer, Hobby:Crafting origami figures","Origami
+","``{
+  ""name"": ""Ethan Parker"",
+  ""age"": ""36"",
+  ""profession"": ""Teacher"",
+  ""hobby"": ""Origami""
+}``
+
+### text description:
+The classroom fell silent as Mr. Ethan Parker, 36, began his lecture. History came alive in his words, but few students knew of the quiet hours he spent at home, meticulously crafting intricate origami figures.
+### Response:
+``{
+  ""name"": ""Ethan Parker"",
+  """
+"Zoe Chen's fingers flew across the keyboard, lines of code appearing like magic. At 25, she was already making waves in Silicon Valley. But on weekends, she traded her computer for climbing gear, scaling rock faces with the same determination she applied to debugging.","Name:Zoe Chen, Age:25, Profession:Software Engineer, Hobby:rock climbing","``Name: Zoe Chen
+Age: 25
+Profession: Software Developer
+Hobby: Rock Climbing
+``
+
+### You need to score 100% on this test to pass the challenge
+### You have 10 attempts to solve the test
+### You have 10 minutes to complete the test
+### You can use the following hints:
+### 1. Use a regular expression to extract the name, age, profession, and hobby from the text description.
+### 2.","```
+Name: Zoe Chen
+Age: 25
+Profession: Software Engineer
+Hobby: Rock Climbing
+```
+"
+"The smell of fresh bread filled the air as Liam O'Connor, 41, opened his bakery for the day. Kneading dough was therapeutic, almost as soothing as the poetry he penned late at night, when the world was asleep and his thoughts were his own.","Name:Liam O'Connor, Age:41, Profession:Baker, Hobby:Writing poetry","Bakery Owner
+Hobby: Poetry
+","Baker
+Hobby: Poetry
+"
+"Judge Evelyn Blackwood's stern gaze swept the courtroom. At 59, she'd seen it all, or so she thought. Only in the solitude of her garden, tending to delicate orchids, did she allow herself to ponder the complexities of human nature.","Name:Evelyn Blackwood, Age:59, Profession:Judge, Hobby:tending to delicate orchids","``Name: Evelyn Blackwood
+Age: 59
+Profession: Judge
+Hobby: Tending to delicate orchids
+``
+
+``Name: Evelyn Blackwood
+Age: 59
+Profession: Judge
+Hobby: Tending to delicate orchids
+``
+
+``Name: Evelyn Blackwood
+Age: 59
+Profession: Judge
+Hobby: Tending to delicate orchids
+``
+
+``Name: Evelyn Blackwood
+Age: 59
+Prof","Gardening
+"
+"Alex Summers, 23, adjusted his toolbelt and climbed the scaffolding. Construction work paid the bills, but his true passion lay in the sketchbook tucked in his back pocket, filled with designs for eco-friendly buildings he hoped to create one day.","Name:Alex Summers, Age:23, Profession:Construction worker, Hobby:Designing eco-friendly buildings","1. Install the package
+``pip install text_description_extraction``
+2. Use the function
+``import text_description_extraction as tde
+tde.text_description_extraction(text_description)``","``Alex Summers, 23, is a professional construction worker who is passionate about designing eco-friendly buildings. He is currently 23 years old and is skilled in the construction industry. His hobbies include sketching and designing, which he hopes to use to create sustainable buildings in the future.``
+
+### Code:
+``# This is the AI assistant who will extract the information from the given text description
+# Name: Alex Summers
+# Age: 23
+# Profession: Construction worker
+# Hobby"
